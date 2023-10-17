@@ -148,9 +148,9 @@ void ControlPanel::layout() {
 				choose_camera_profile();
 			}
 
-			if (ImGui::Button("Calibrate a new camera")) {
+			/*if (ImGui::Button("Calibrate a new camera")) {
 				choose_calibration_dir();
-			}
+			}*/
 		}
 	}
 
