@@ -18,14 +18,29 @@ The app is a C++ application that can be built in Visual Studio, but you will ne
 * Build the solution. 
 * Start the debugger.
 
+## Using the app
 
-## Using "markerless" mode
+### Camera profiles
+
+The app relies on a camera profile (.ocp) to be able to correctly calculate the points in annotated images. You should select a camera profile for the specific camera your images were taken with. If you need to create a new camera profile, use the following steps:
+1. Print out the OpenCV camera calibration pattern (https://github.com/opencv/opencv/blob/4.x/doc/pattern.png) on a sheet of paper at scale. Note the size of the grid (this one should be 9x6).
+2. Mount the printed pattern on a flat, stationary surface. Make sure the pattern is not warped or distorted.
+3. Take a series of images of the pattern from different angles and distances, but all using the same zoom and focal length. Make sure the pattern is fully visible in the images.
+4. Make sure all of the images are saved as .jpg files in one directory with nothing else in it. (Any other image format, including .JPG and .jpeg, will not work.)
+5. Open the app, and go to Tools > Camera Profile > New Camera Profile.
+6. Fill out the Camera Details fields, taking care to make sure the zoom level and focal length are accurate.
+7. Select your image directory for the calibration images.
+8. Enter the camera calibration checkerboard pattern size, adjusting for pattern orientation if necessary.
+9. Select a file to save the camera profile to.
+10. Click Run Calibration. The app will attempt to calibrate the camera using the images in the directory. If calibration is successful, the camera profile will be saved to the selected file.
+
+### "Markerless" mode
 
 The app has several available grid alignment methods but we're aiming to use the "marklerless" mode. This mode uses a single camera to capture images of the vehicle and the environment. The user will be prompted to select a region of interest (ROI) in the image. The app will then use the ROI to detect the vehicle and calculate the blind spot and field of view. Other modes are expected to be buggy and are mostly just proof of concept.
 
 To use "markerless" mode:
 1. Open the app.
-2. Click "Load camera profile" and select the relevant camera profile for the image. Each camera should have it's own specific profile & calibration.
+2. Click "Load camera profile" and select the relevant camera profile for the image(s). Each camera should have it's own specific profile & calibration.
 3. Use file > Import image to import the image.
 4. Select the "markerless" mode.
 5. Input the various camera position values for the image (X, Y, and Z offsets + camera rotation).
