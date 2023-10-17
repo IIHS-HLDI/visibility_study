@@ -89,7 +89,7 @@ void CalibrationMenu::layout() {
 		choose_calibration_dir();
 	}
 
-	ImGui::InputInt2("Checkerboard Dimensions (smaller, larger)", checkerboard_dims);
+	ImGui::InputInt2("Checkerboard Dimensions (width, height)", checkerboard_dims);
 
 	if (ImGui::Button("Run Calibration")) {
 		camera_profile.calibrate(cal_img_dir, checkerboard_dims);
