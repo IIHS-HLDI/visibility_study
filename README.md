@@ -15,8 +15,9 @@ The app is a C++ application that can be built in Visual Studio, but you will ne
 * Clone this repo to your local system.
 * Open the `pgrid.sln` solution file in Visual Studio.
 * Set the **pgrid** project as the start up project.
+* Sent the environment to Debug and x64.
 * Build the solution. 
-* Start the debugger.
+* Start the Local Windows Debugger.
 
 ## Using the app
 
